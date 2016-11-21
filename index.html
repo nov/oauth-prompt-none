@@ -11,7 +11,11 @@
         if (event.origin !== "https://nov.github.io") {
           return;
         }
-        console.info(event.data);
+        if (event.data.includes('error')) {
+          console.info('login required');
+        } else {
+          console.info('already logged-in');
+        }
       }, false);
     </script>
   </body>
