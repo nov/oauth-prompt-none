@@ -7,15 +7,11 @@
   <body>
     <iframe style="width:0; height:0; border:0; border:none" src="https://accounts.google.com/o/oauth2/v2/auth?client_id=847416742371-sjn1m8nso6eu3lh22tgu87dk0ukahg2a.apps.googleusercontent.com&response_type=code&scope=openid&redirect_uri=https://nov.github.io/oauth-prompt-none/callback&prompt=none&state=some-random-value"></iframe>
     <script>
-      window.addEventListener("message", function (event) {
-        if (event.origin !== "https://nov.github.io") {
+      window.addEventListener('message', function (event) {
+        if (event.origin !== 'https://nov.github.io') {
           return;
         }
-        if (event.data.includes('error')) {
-          console.info('login required');
-        } else {
-          console.info('already logged-in');
-        }
+        console.info(event.data);
       }, false);
     </script>
   </body>

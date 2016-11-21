@@ -6,7 +6,13 @@
   </head>
   <body>
     <script>
-      parent.postMessage(location.search, 'https://nov.github.io');
+      var message;
+      if (location.search.includes('error')) {
+        message = 'login required';
+      } else {
+        message = 'already logged-in';
+      }
+      parent.postMessage(message, 'https://nov.github.io');
     </script>
   </body>
 </html>
